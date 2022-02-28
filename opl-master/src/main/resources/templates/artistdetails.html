@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="row1">
+    <div class="row1content" th:if="${artist}">
+        <h2 th:text="${artist.artistName}">artistdetails</h2>
+
+        <div class="venueinfo">
+            <div class="infoLine">
+                <div class="infoLineName">info:</div>
+                <div class="infoLineValue">
+                    <a th:href="${artist.id}" th:text="${artist.id}" target="_blank">id</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row1content" th:unless="${artist}">
+        <p>no artist was chosen</p>
+    </div>
+</div>
+</body>
+</html>
